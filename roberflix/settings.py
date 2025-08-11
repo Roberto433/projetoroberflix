@@ -13,7 +13,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 from pathlib import Path
 
 
-from django.conf.global_settings import LOGIN_REDIRECT_URL, STATIC_ROOT, SECRET_KEY
+from django.conf.global_settings import LOGIN_REDIRECT_URL, STATIC_ROOT, SECRET_KEY, DEFAULT_FILE_STORAGE
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -43,6 +43,8 @@ INSTALLED_APPS = [
     "filme",
     "crispy_forms",
     "crispy_bootstrap5",
+    "cloudinary-storage",
+    "cloudinary"
 ]
 
 
@@ -151,3 +153,11 @@ LOGIN_URL = 'filme:login'
 CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap5'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap5'
+
+CLOUDINARY_STORAGE = {
+    'CLOUD_NAME': 'hzvuonldq',
+    'API_KEY': '245717171822813',
+    'API_SECRET': '*********************************'
+}
+
+DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
