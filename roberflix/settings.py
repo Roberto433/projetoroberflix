@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 """
 
 from pathlib import Path
-import os
+
 
 from django.conf.global_settings import LOGIN_REDIRECT_URL, STATIC_ROOT, SECRET_KEY
 
@@ -23,16 +23,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-TOKEN_CSRF = os.getenv('TOKEN_CSRF')
-if TOKEN_CSRF:
-    SECRET_KEY = TOKEN_CSRF
-else:
-    SECRET_KEY = "django-insecure-d+13jc**-9l2sn_#qox1iy0*14b@b@ew8)uj=-xc0=v6@f$ngd"
+SECRET_KEY = "django-insecure-d+13jc**-9l2sn_#qox1iy0*14b@b@ew8)uj=-xc0=v6@f$ngd"
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ['127.0.0.1', 'roberflix-cd44d7aa6d80.herokuapp.com']
 
 
 # Application definition
@@ -93,14 +89,6 @@ DATABASES = {
     }
 }
 
-import dj_database_url
-
-
-DATABASE_URL = os.getenv("DATABASE_URL")
-if DATABASE_URL:
-    DATABASES = {
-        'default': dj_database_url.config(default=DATABASE_URL, conn_max_age=1800)
-    }
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
