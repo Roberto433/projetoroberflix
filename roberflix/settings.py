@@ -155,9 +155,9 @@ CRISPY_ALLOWED_TEMPLATE_PACKS = 'bootstrap5'
 CRISPY_TEMPLATE_PACK = 'bootstrap5'
 
 CLOUDINARY_STORAGE = {
-    'CLOUD_NAME': 'hzvuonldq',
-    'API_KEY': '245717171822813',
-    'API_SECRET': '*********************************'
+    'CLOUD_NAME': 'dwopmqzre',
+    'API_KEY': '571264859482337',
+    'API_SECRET': 'He-g4I9v39xZRPQLlZ_XDkUOPjY'
 }
 
 DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
