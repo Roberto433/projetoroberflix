@@ -7,15 +7,18 @@ class FilmeConfig(AppConfig):
     name = "filme"
 
     def ready(self):
-        from .models import Usuario
+        from filme.models import Usuario
         import os
 
         email = os.getenv("EMAIL_ADMIN")
         senha = os.getenv("SENHA_ADMIN")
 
-        usuario = Usuario.objects.filter(email=email)
-        if not usuario:
-            Usuario.objects.create_superuser(username="admin", email=email, password=senha,
-                                             is_active=True, is_staff=True)
+        Usuario.objects.filter(username='admin').exists()
+
+        Usuario.objects.filter(username='admin').delete()
+
+        if not Usuario.objects.filter(username="admin").exists():
+            Usuario.objects.create_superuser(username="admin", email=email, password=senha)
+
 
 
