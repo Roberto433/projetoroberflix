@@ -1,1 +1,1 @@
-web: gunicorn roberflix.wsgi --log-file -
+web: python manage.py migrate && gunicorn roberflix.wsgi --log-file -
