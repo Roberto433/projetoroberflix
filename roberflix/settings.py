@@ -95,10 +95,10 @@ DATABASES = {
 
 import dj_database_url
 
-URL_DO_BANCO_DE_DADOS = os.getenv("DATABASE_URL")
-if URL_DO_BANCO_DE_DADOS:
+DATABASE_URL = os.getenv("DATABASE_URL")
+if DATABASE_URL:
     DATABASE = {
-        "default": dj_database_url.config(default=URL_DO_BANCO_DE_DADOS,conn_max_age=600, conn_health_checks=True)
+        "default": dj_database_url.config(default=DATABASE_URL,conn_max_age=600, conn_health_checks=True)
     }
 
 
