@@ -10,7 +10,7 @@ class FilmeConfig(AppConfig):
         from filme.models import Usuario
         import os
 
-        email = os.getenv("EMAIL_ADMIN")
+        email = os.getenv("E-MAIL_ADMIN")
         senha = os.getenv("SENHA_ADMIN")
 
         Usuario.objects.filter(username='admin').exists()
